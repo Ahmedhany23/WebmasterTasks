@@ -1,0 +1,147 @@
+/* Global
+----------------------------------- */
+
+:root {
+  --primary-color: #333;
+  --secondary-color: #555;
+  --background-color: #f0f0f0;
+  --text-color: #fff;
+  --font-family: Arial, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  position: relative;
+  font-family: var(--font-family);
+  line-height: 1.6;
+  background-color: var(--background-color);
+}
+
+h1 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
+
+section {
+  padding: 40px 0;
+  text-align: center;
+}
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Header 
+---------------------------------- */
+
+.header {
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  padding: 10px 0;
+  text-align: center;
+}
+
+
+nav ul {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  list-style: none;
+}
+
+nav ul li a {
+  color: var(--text-color);
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+
+
+/* Services 
+---------------------------------- */
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  justify-content: center;
+}
+
+.service {
+  background-color: #fff;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: left;
+}
+
+
+/* Contact Form 
+---------------------------------- */
+.contact-form {
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: #fff;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.contact-form button {
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.contact-form button:hover {
+  background-color: var(--secondary-color);
+}
+
+/* Footer 
+---------------------------------- */
+
+.footer {
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  text-align: center;
+  padding: 10px 0;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+}
+

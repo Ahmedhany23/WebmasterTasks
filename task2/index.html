@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Image Gallery</title>
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+      h1 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 80px;
+        padding: 80px 0;
+      }
+      .gallery {
+        display: grid;
+        text-align: center;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 20px;
+        justify-items: center;
+        align-items: center;
+        height: 100%;
+      }
+      .gallery-item {
+        width: 100%;
+        height: 100%;
+      }
+      .gallery-item img {
+        width: 100%;
+        transition: 0.3s;
+        cursor: pointer;
+      }
+      .gallery-item img:hover {
+        transform: scale(0.8) rotate(-10deg);
+      }
+      .full-image {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.795);
+        z-index: 1;
+      }
+      .center-image {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        height: 100%;
+      }
+      .center-image img {
+        max-width: 500px;
+        width: 100%;
+      }
+      .close-icon {
+        color: white;
+        cursor: pointer;
+        font-size: 30px;
+        display: flex;
+        align-items: end;
+        justify-content: end;
+        margin-bottom: 20px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Image Gallery</h1>
+    <div class="full-image" id="fullImage">
+      <div class="center-image">
+        <div>
+          <span class="close-icon" onclick="closeFullImg()">X</span>
+          <img src="/images/image1.jpg" alt="image" id="Image" />
+        </div>
+      </div>
+    </div>
+    <div class="gallery">
+      <figure class="gallery-item">
+        <img src="/images/image1.jpg" alt="image" onclick="openFullImg(this.src)" />
+        <figcaption>Image 1</figcaption>
+      </figure>
+
+      <figure class="gallery-item">
+        <img src="/images/image2.jpg" alt="image" onclick="openFullImg(this.src)" />
+        <figcaption>Image 2</figcaption>
+      </figure>
+      <figure class="gallery-item">
+        <img src="/images/image3.jpg" alt="image" onclick="openFullImg(this.src)" />
+        <figcaption>Image 3</figcaption>
+      </figure>
+      <figure class="gallery-item">
+        <img src="/images/image4.jpg" alt="image" onclick="openFullImg(this.src)" />
+        <figcaption>Image4</figcaption>
+      </figure>
+    </div>
+
+    <script>
+      let fullImage = document.getElementById("fullImage");
+      let Image = document.getElementById("Image");
+
+      function openFullImg(url) {
+        fullImage.style.display = "block";
+        Image.src = url;
+      }
+      function closeFullImg() {
+        fullImage.style.display = "none";
+      }
+    </script>
+  </body>
+</html>
